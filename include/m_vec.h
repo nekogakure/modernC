@@ -35,7 +35,7 @@ struct { \
 do { \
 	if ((v).len >= (v).cap) { \
 		Result _r = vec_grow((void**)&(v).data, &(v).cap, sizeof(*(v).data)); \
-		if (is_err(_r)) return _r; \
+		if (IsErr(_r)) return _r; \
 	} \
 	(v).data[(v).len++] = (item); \
 } while (0)
