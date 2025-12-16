@@ -16,6 +16,14 @@
 - `let`での変数宣言（C23でのみ有効）。
 - `panic`で致命的エラーを報告。
 
+### ドキュメント一覧
+- [変数型と基本ユーティリティ](var.md)
+- [Result型とエラーハンドリング](result.md)
+- [Option型](option.md)
+- [Vec(T)動的配列](vec.md)
+- [StringとStrSlice](string.md)
+- [panicによるエラー報告](panic.md)
+
 ### 提供される主要な型・マクロ
 - 基本型エイリアス
   - i8,i16,i32,i64, u8,u16,u32,u64, isize, usize, f32, f64
@@ -108,7 +116,7 @@ vec_free(v);
 
 そのほかの実用的な例は`example/`ディレクトリを参照してください。
 
-## FAQ
+### FAQ
 Q: `Try`は何をしているの？
 
 A: `Try(r)` は内部で`__auto_type _r = (r); if (_r.status != Status_Ok) return _r;`を行います。つまり失敗を見つけたらそのエラー`Result`を呼び出し元に即座に返します。
@@ -121,5 +129,5 @@ Q: `vec_push` が失敗するとどうなる？
 
 A: `vec_push`内で容量拡張に失敗した場合、`vec_grow`が`Err`を返します。そのマクロを使っている関数は早期リターンしてエラーを外に伝えます。
 
-## ライセンス
+### ライセンス
 [LICENSE](../LICENSE)を参照してください。
