@@ -13,5 +13,10 @@ add_library(modernC STATIC src/modern.c
         include/modern.h
         include/m_option.h)
 
-add_executable(example example/main.c)
-target_link_libraries(example PRIVATE modernC)
+add_executable(example-fizzbuzz example/fizzbuzz.c)
+add_executable(example-string example/string_demo.c)
+add_executable(example-vector example/vec_demo.c)
+
+target_link_libraries(example-fizzbuzz PRIVATE modernC)
+target_link_libraries(example-string PRIVATE modernC)
+target_link_libraries(example-vector PRIVATE modernC)
