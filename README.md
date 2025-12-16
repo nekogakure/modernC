@@ -13,6 +13,9 @@ Everything is completed **entirely on top of standard C**, requiring no special 
 - Attribute support
 - And more
 
+## How to Use?
+[See the documentation](./docs) for details on how to use modernC.
+
 ## Intended Use
 For people who are interested in trying C++ or Rust but are not quite ready to take that step yet, and for enthusiasts.
 
