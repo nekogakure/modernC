@@ -11,8 +11,8 @@ typedef struct {
 #define Ok()		((Result){ .status = Status_Ok })	/// success result
 #define Err(code)	((Result){ .status = (code) })		/// error result
 
-#define is_ok(r)	((r).status == Status_Ok)		/// check for success
-#define is_err(r)	((r).status != Status_Ok)		/// check for error
+#define IsOk(r)	((r).status == Status_Ok)		/// check for success
+#define IsErr(r)	((r).status != Status_Ok)		/// check for error
 
 /// Result type with a value
 #define ResultOf(T) \
@@ -44,7 +44,7 @@ typedef ResultOf(String) ResultString;
 })
 
 /// Try a Result, return if it's an error
-#define TRY(r) \
+#define Try(r) \
 do { \
 	__auto_type _r = (r); \
 	if (_r.status != Status_Ok) { \
@@ -53,7 +53,7 @@ do { \
 } while (0)
 
 /// Try a Result with value, return if it's an error, otherwise get the value
-#define TRY_VAL(r) \
+#define TryVal(r) \
 ({ \
 	__auto_type _r = (r); \
 	if (_r.status != Status_Ok) { \
