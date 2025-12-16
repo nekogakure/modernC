@@ -21,7 +21,7 @@ Result run_vec_demo(void) {
 	while (vec_len(v) > 0) {
 		i32 out;
 		const let r = vec_try_pop(v.data, &v.len, &out, sizeof(out));
-		if (is_err(r)) {
+		if (IsErr(r)) {
 			panic("vec_try_pop failed");
 		}
 		printf("popped: %d\n", out);
@@ -33,7 +33,7 @@ Result run_vec_demo(void) {
 
 int main(void) {
 	const let r = run_vec_demo();
-	if (is_err(r)) {
+	if (IsErr(r)) {
 		fprintf(stderr, "vec_demo failed: %d\n", r.status);
 	}
 
