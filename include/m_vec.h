@@ -61,5 +61,6 @@ do { \
 
 
 Result vec_grow(void** data, usize* cap, usize elem_size);
+Result vec_try_pop(void* data, usize* len, void* out, usize elem_size);
 
-#endif //MODERNC_VEC_H
+#endif // MODERNC_VEC_H
