@@ -32,7 +32,7 @@ Result find_in_array(const i32 *arr, usize len, i32 v, usize *out_index) {
 int main(void) {
 	const let r = use_try();
 	if (IsErr(r)) {
-		printf("use_try returned error: %d\n", r.status);
+		printf("use_try returned error: %s\n", status_to_str(r.status));
 	}
 
 	constexpr i32 nums[] = {5, 7, 9};

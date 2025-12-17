@@ -34,7 +34,7 @@ Result run_vec_demo(void) {
 int main(void) {
 	const let r = run_vec_demo();
 	if (IsErr(r)) {
-		fprintf(stderr, "vec_demo failed: %d\n", r.status);
+		fprintf(stderr, "vec_demo failed: %s\n", status_to_str(r.status));
 	}
 
 	return r.status;
