@@ -62,15 +62,24 @@ typedef enum {
 #define unlikely(x) __builtin_expect(!!(x), 0)
 
 StrSlice str_slice(const char *s, usize len);
+
 boolean str_eq(StrSlice a, StrSlice b);
+
 StrSlice str_sub(StrSlice s, usize pos, usize len);
+
 String string_new(void);
+
 void string_free(String *s);
+
 String string_from_slice(StrSlice src);
-Status string_push(String* s, char c);
-Status string_append(String* s, StrSlice tail);
-StrSlice string_as_slice(const String* s);
-const char* status_to_str(Status s);
+
+Status string_push(String *s, char c);
+
+Status string_append(String *s, StrSlice tail);
+
+StrSlice string_as_slice(const String *s);
+
+const char *status_to_str(Status s);
 
 #define str_lit(lit) \
 	((StrSlice){ .data = (lit), .len = sizeof(lit) - 1 })
