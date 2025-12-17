@@ -11,11 +11,11 @@ Result run_vec_demo(void) {
 		vec_push(v, i);
 	}
 
-	printf("vec len=%zu cap=%zu\n", (size_t)vec_len(v), (size_t)vec_capacity(v));
+	printf("vec len=%zu cap=%zu\n", (size_t) vec_len(v), (size_t) vec_capacity(v));
 
 	// iterate and print
 	for (usize i = 0; i < vec_len(v); i++) {
-		printf("v[%zu]=%d\n", (size_t)i, v.data[i]);
+		printf("v[%zu]=%d\n", (size_t) i, v.data[i]);
 	}
 
 	while (vec_len(v) > 0) {

@@ -5,14 +5,14 @@
 
 /// Error value that can accompany an error Status
 typedef struct {
-    Status code;    /// status code (same as Result.status)
-    String msg;     /// optional owned message (maybe empty)
+    Status code; /// status code (same as Result.status)
+    String msg; /// optional owned message (maybe empty)
 } Error;
 
 /// Result type for functions that can succeed or fail, optionally carrying an Error
 typedef struct {
-    Status status;  /// success or error status
-    Error err;      /// error details if status != Status_Ok
+    Status status; /// success or error status
+    Error err; /// error details if status != Status_Ok
 } Result;
 
 #define IsOk(r) ((r).status == Status_Ok)      /// check for success
@@ -72,9 +72,13 @@ do { \
 })
 
 noreturn void panic(const char *msg);
+
 ResultString f(String s);
+
 Result ErrWithMsg(Status code, String msg);
+
 Result Ok();
+
 Result Err(Status st);
 
 #endif // MODERNC_RESULT_H
