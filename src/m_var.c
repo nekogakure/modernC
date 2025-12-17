@@ -120,3 +120,18 @@ Status string_append(String* s, const StrSlice tail) {
 StrSlice string_as_slice(const String* s) {
 	return (StrSlice){ .data = s->data, .len = s->len };
 }
+
+/**
+ * Convert a status code to a human-readable string
+ * @param s status code
+ * @return human-readable string
+ */
+const char* status_to_str(Status s) {
+    switch (s) {
+        case Status_Ok: return "Ok";
+        case Status_Err: return "Error";
+        case Status_Nomem: return "No memory available";
+        case Status_Invalid: return "Invalid argument";
+        default: return "Unknown status";
+    }
+}

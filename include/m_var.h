@@ -70,6 +70,7 @@ String string_from_slice(StrSlice src);
 Status string_push(String* s, char c);
 Status string_append(String* s, StrSlice tail);
 StrSlice string_as_slice(const String* s);
+const char* status_to_str(Status s);
 
 #define str_lit(lit) \
 	((StrSlice){ .data = (lit), .len = sizeof(lit) - 1 })

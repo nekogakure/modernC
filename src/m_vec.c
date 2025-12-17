@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include "../include/m_var.h"
 #include "../include/m_vec.h"
 #include "../include/m_result.h"
 
