@@ -18,7 +18,7 @@ Result use_try(void) {
 	return Ok();
 }
 
-Result find_in_array(const i32 *arr, usize len, i32 v, usize *out_index) {
+Result find_in_array(const i32 *arr, const usize len, i32 v, usize *out_index) {
 	if (!arr || !out_index) return Err(Status_Invalid);
 	for (usize i = 0; i < len; i++) {
 		if (arr[i] == v) {
